@@ -1,0 +1,172 @@
+<!--SIGN-UP PAGE-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker - Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Dark overlay for better readability */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Darker overlay */
+            z-index: 0;
+        }
+
+        .container {
+            padding: 35px;
+            text-align: center;
+            width: 400px;
+            position: relative;
+            z-index: 1;
+            border: 2px solid white; /* White border */
+            border-radius: 15px; /* Rounded corners */
+            backdrop-filter: blur(8px); /* Slight blur for modern effect */
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            border: 2px solid #006d77;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 12px 12px 50px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: transparent;
+            color: #fff;
+            box-sizing: border-box;
+        }
+
+        .form-group input::placeholder {
+            color: #ccc;
+        }
+
+        .form-group .icon {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 1.4rem;
+        }
+
+        .btn {
+            background: #006d77;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #15616d;
+        }
+
+        .links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #00bcd4;
+            font-weight: bold;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="Photos/Logo.png" alt="Finance Logo">
+        </div>
+        <h1>Personal Finance Tracker</h1>
+        <h2>CREATE YOUR ACCOUNT</h2>
+        <form action="db_settings/signup.php" method="post">
+            <div class="form-group">
+                <i class="fas fa-user icon"></i>
+                <input type="text" name="full_name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-envelope icon"></i>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-phone icon"></i>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-lock icon"></i>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-lock icon"></i>
+                <input type="password"  name="confirm_password" placeholder="Confirm Password" required>
+            </div>
+            <button class="btn" type="submit">SIGN UP</button>
+        </form>
+        <div class="links">
+            <a href="Login.html">Already have an account? Log In</a>
+        </div>
+    </div>
+</body>
+
+</html>

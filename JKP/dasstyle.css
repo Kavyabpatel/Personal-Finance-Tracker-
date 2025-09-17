@@ -1,0 +1,417 @@
+                        /* General Styles */
+                        body {
+                            font-family: 'Arial', sans-serif;
+                            margin: 0;
+                            padding: 0;
+                            background: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1911&q=80') no-repeat center center fixed;
+                            background-size: cover;
+                            color: #fff;
+                            transition: background-color 0.3s, color 0.3s;
+                        }
+                
+                        body.dark-mode {
+                            background-color: #121212;
+                            color: #ffffff;
+                        }
+                
+                        .container {
+                            display: grid;
+                            grid-template-columns: 250px auto;
+                            height: 100vh;
+                        }
+                
+                        /* Advanced Sidebar Styles */
+                        .sidebar {
+                            background-color: rgba(0, 0, 0, 0.85);
+                            padding: 20px;
+                            transition: background-color 0.3s;
+                            display: flex;
+                            flex-direction: column;
+                        }
+                
+                        .sidebar-header {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 30px;
+                            padding-bottom: 20px;
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                        }
+                
+                        .sidebar-header img {
+                            width: 40px;
+                            height: 40px;
+                            margin-right: 10px;
+                        }
+                
+                        .sidebar-header h2 {
+                            margin: 0;
+                            font-size: 1.3rem;
+                            color: #00ced1;
+                        }
+                
+                        .sidebar-menu {
+                            flex-grow: 1;
+                            overflow-y: auto;
+                        }
+                
+                        .sidebar-section {
+                            margin-bottom: 25px;
+                        }
+                
+                        .sidebar-section h3 {
+                            color: #00ced1;
+                            font-size: 0.9rem;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                            margin-bottom: 15px;
+                            padding-left: 10px;
+                        }
+                
+                        .sidebar-item {
+                            display: flex;
+                            align-items: center;
+                            padding: 12px 15px;
+                            margin-bottom: 5px;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            color: #ddd;
+                        }
+                
+                        .sidebar-item:hover {
+                            background-color: rgba(0, 206, 209, 0.2);
+                            transform: translateX(5px);
+                        }
+                
+                        .sidebar-item.active {
+                            background-color: rgba(0, 206, 209, 0.3);
+                            border-left: 3px solid #00ced1;
+                        }
+                
+                        .sidebar-item i {
+                            width: 24px;
+                            text-align: center;
+                            margin-right: 12px;
+                            font-size: 1.1rem;
+                        }
+                
+                        .sidebar-item p {
+                            margin: 0;
+                            font-size: 0.95rem;
+                        }
+                
+                        .sidebar-footer {
+                            margin-top: auto;
+                            padding-top: 20px;
+                            border-top: 1px solid rgba(255, 255, 255, 0.1);
+                        }
+                
+                        .user-profile {
+                            display: flex;
+                            align-items: center;
+                            padding: 10px;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            transition: background-color 0.3s;
+                        }
+                
+                        .user-profile:hover {
+                            background-color: rgba(255, 255, 255, 0.1);
+                        }
+                
+                        .user-profile img {
+                            width: 36px;
+                            height: 36px;
+                            border-radius: 50%;
+                            margin-right: 10px;
+                            object-fit: cover;
+                        }
+                
+                        .user-info h4 {
+                            margin: 0;
+                            font-size: 0.9rem;
+                            font-weight: 500;
+                        }
+                
+                        .user-info p {
+                            margin: 0;
+                            font-size: 0.8rem;
+                            color: #aaa;
+                        }
+                
+                        /* Main Content Styles */
+                        .main {
+                            padding: 20px;
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: 20px;
+                            background: rgba(0, 0, 0, 0.7);
+                            overflow-y: auto;
+                        }
+                
+                        .card {
+                            background: rgba(255, 255, 255, 0.1);
+                            padding: 20px;
+                            border-radius: 10px;
+                            text-align: center;
+                            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                            position: relative;
+                            transition: transform 0.3s ease, box-shadow 0.3s ease;
+                            cursor: pointer;
+                            border: 1px solid rgba(255, 255, 255, 0.1);
+                        }
+                
+                        .card:hover {
+                            transform: translateY(-5px);
+                            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+                            border-color: rgba(0, 206, 209, 0.3);
+                        }
+                
+                        .card h3 {
+                            font-size: 1.5rem;
+                            color: #00ced1;
+                            margin-bottom: 10px;
+                            text-align: left;
+                        }
+                
+                        .card p {
+                            font-size: 1.1rem;
+                            color: #ddd;
+                            line-height: 1.6;
+                            text-align: left;
+                        }
+                
+                        .chart-container {
+                            width: 100%;
+                            height: 200px;
+                        }
+                
+                        .spending-item img, 
+                        .income-item img, 
+                        .notification-item img,
+                        .budget-item img,
+                        .debt-item img {
+                            width: 24px;
+                            height: 24px;
+                            margin-right: 10px;
+                            vertical-align: middle;
+                        }
+                
+                        .spending-item, 
+                        .income-item, 
+                        .notification-item,
+                        .budget-item,
+                        .debt-item {
+                            font-size: 16px;
+                            margin: 10px 0;
+                            text-align: left;
+                            color: #ddd;
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                
+                        .monthly-image, 
+                        .financial-statement-image {
+                            position: absolute;
+                            top: 20px;
+                            right: 20px;
+                            width: 50px;
+                            height: 50px;
+                            object-fit: contain;
+                            border-radius: 8px;
+                            opacity: 0.8;
+                        }
+                
+                        .dark-mode-toggle {
+                            position: fixed;
+                            bottom: 20px;
+                            right: 20px;
+                            background-color: #333;
+                            color: white;
+                            border: none;
+                            padding: 10px 15px;
+                            border-radius: 50px;
+                            cursor: pointer;
+                            transition: background-color 0.3s;
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            z-index: 100;
+                        }
+                
+                        body.dark-mode .dark-mode-toggle {
+                            background-color: #555;
+                        }
+                
+                        .transaction-history {
+                            max-height: 300px;
+                            overflow-y: auto;
+                        }
+                
+                        .transaction-item {
+                            display: flex;
+                            justify-content: space-between;
+                            padding: 10px;
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                        }
+                
+                        .progress-bar {
+                            width: 100%;
+                            background-color: rgba(255, 255, 255, 0.1);
+                            border-radius: 5px;
+                            overflow: hidden;
+                            margin: 10px 0;
+                            height: 10px;
+                        }
+                
+                        .progress-bar-fill {
+                            height: 100%;
+                            background: linear-gradient(90deg, #00ced1, #009688);
+                            border-radius: 5px;
+                            transition: width 0.5s ease;
+                        }
+                
+                        .currency-converter {
+                            display: flex;
+                            gap: 10px;
+                            margin-top: 20px;
+                            flex-wrap: wrap;
+                        }
+                
+                        .currency-converter input, 
+                        .currency-converter select {
+                            padding: 8px 12px;
+                            border-radius: 5px;
+                            border: 1px solid rgba(255, 255, 255, 0.2);
+                            background-color: rgba(255, 255, 255, 0.1);
+                            color: #ddd;
+                            flex: 1;
+                            min-width: 100px;
+                        }
+                
+                        .currency-converter button {
+                            padding: 8px 15px;
+                            background-color: #00ced1;
+                            color: #000;
+                            border: none;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            transition: background-color 0.3s;
+                        }
+                
+                        .currency-converter button:hover {
+                            background-color: #009688;
+                        }
+                
+                        table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            margin-top: 10px;
+                        }
+                
+                        th, td {
+                            padding: 12px;
+                            text-align: left;
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                        }
+                
+                        th {
+                            background-color: rgba(0, 206, 209, 0.2);
+                            color: #00ced1;
+                        }
+                
+                        tr:hover {
+                            background-color: rgba(255, 255, 255, 0.05);
+                        }
+                
+                        .ai-insights {
+                            background-color: rgba(0, 206, 209, 0.1);
+                            padding: 15px;
+                            border-radius: 8px;
+                            margin-top: 15px;
+                            border-left: 4px solid #00ced1;
+                        }
+                
+                        .ai-insights p {
+                            margin: 5px 0;
+                            font-size: 14px;
+                        }
+                
+                        .ai-insights p::before {
+                            content: "💡 ";
+                        }
+                
+                        .bill-reminders {
+                            background-color: rgba(255, 193, 7, 0.1);
+                            padding: 15px;
+                            border-radius: 8px;
+                            margin-top: 15px;
+                            border-left: 4px solid #ffc107;
+                        }
+                
+                        .bill-reminders p {
+                            margin: 5px 0;
+                            font-size: 14px;
+                        }
+                
+                        .bill-reminders p::before {
+                            content: "🔔 ";
+                        }
+                
+                        .tax-planner {
+                            background-color: rgba(76, 175, 80, 0.1);
+                            padding: 15px;
+                            border-radius: 8px;
+                            margin-top: 15px;
+                            border-left: 4px solid #4caf50;
+                        }
+                
+                        .retirement-planner {
+                            background-color: rgba(33, 150, 243, 0.1);
+                            padding: 15px;
+                            border-radius: 8px;
+                            margin-top: 15px;
+                            border-left: 4px solid #2196f3;
+                        }
+                
+                        .credit-score {
+                            background-color: rgba(156, 39, 176, 0.1);
+                            padding: 15px;
+                            border-radius: 8px;
+                            margin-top: 15px;
+                            border-left: 4px solid #9c27b0;
+                        }
+                
+                        .footer {
+                            grid-column: span 3;
+                            text-align: center;
+                            padding: 20px;
+                            background-color: rgba(0, 0, 0, 0.5);
+                            margin-top: 20px;
+                            border-radius: 8px;
+                        }
+                
+                        /* Responsive Design */
+                        @media (max-width: 1200px) {
+                            .main {
+                                grid-template-columns: repeat(2, 1fr);
+                            }
+                        }
+                
+                        @media (max-width: 768px) {
+                            .container {
+                                grid-template-columns: 1fr;
+                            }
+                
+                            .sidebar {
+                                display: none;
+                            }
+                
+                            .main {
+                                grid-template-columns: 1fr;
+                            }
+                
+                            .card {
+                                grid-column: span 1 !important;
+                            }
+                        }

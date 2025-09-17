@@ -1,0 +1,368 @@
+<!--HOME PAGE-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            position: relative;
+        }
+
+        /* Dark overlay for background */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0, 121, 107, 0.9);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 95, 95, 0.9);
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 64px;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        nav .auth-buttons a {
+            background-color: #FFD700;
+            color: #333;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        nav .auth-buttons a:hover {
+            background-color: #ffc700;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: transparent;
+            position: relative;
+        }
+
+        .hero img {
+            width: 200px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .hero img:hover {
+            transform: scale(1.05);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            animation: fadeIn 2s ease;
+        }
+
+        .cta-buttons {
+            margin-top: 30px;
+        }
+
+        .cta-buttons a {
+            text-decoration: none;
+            background-color: #008080;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 0 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-buttons a:hover {
+            background-color: #005f5f;
+            transform: translateY(-5px);
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 60px 20px;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .feature-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid #81e6d9;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-box h3 {
+            color: #81e6d9;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .feature-box p {
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        /* Info Sections */
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            align-items: center;
+            gap: 30px;
+            margin: 60px 20px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-section img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-section div {
+            max-width: 600px;
+        }
+
+        .info-section h2 {
+            color: #81e6d9;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 95, 95, 0.9);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header><b>Personal Finance Tracker</b></header>
+    <nav>
+        <div>
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="overview.html"><i class="fas fa-info-circle"></i> Overview</a>
+            <a href="features.html"><i class="fas fa-cogs"></i> Features</a>
+            <a href="whychooseus.html"><i class="fas fa-thumbs-up"></i> Why Choose Us</a>
+            <a href="contactUs.html"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="Login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="Signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+        </div>
+    </nav>
+    <section class="hero">
+        <img src="Photos/Logo.png" alt="Wallet Icon">
+        <h1>Take Control of Your Finances</h1>
+        <p>Track your expenses, set budgets, and achieve your financial goals with ease.</p>
+        <div class="cta-buttons">
+            <a href="Signup.html">Get Started</a>
+            <a href="features.html">Learn More</a>
+        </div>
+    </section>
+    <section class="features">
+        <div class="feature-box">
+            <h3><i class="fas fa-chart-line"></i> Budget Planning</h3>
+            <p>Create and track budgets with ease, helping you achieve your financial goals.</p>
+        </div>
+        <div class="feature-box">
+            <h3><i class="fas fa-piggy-bank"></i> Savings Goals</h3>
+            <p>Set and monitor your savings milestones to ensure you're always on track.</p>
+        </div>
+        <div class="feature-box">
+            <h3><i class="fas fa-bell"></i> Reminders & Alerts</h3>
+            <p>Stay informed with timely notifications about bills, transactions, and more.</p>
+        </div>
+        <div class="feature-box">
+            <h3><i class="fas fa-lock"></i> Secure Data</h3>
+            <p>Your financial data is encrypted and protected with the highest standards.</p>
+        </div>
+    </section>
+
+    <!-- Budget Planning Section -->
+    <section class="info-section">
+        <img src="Photos/BudgetPlanning.jpg" alt="Budget Planning Illustration">
+        <div>
+            <h2>Effective Budget Planning</h2>
+            <p>
+                Managing your finances starts with a solid budget. With our Personal Finance Tracker, you can easily set
+                spending limits for various categories such as groceries, transportation, and entertainment. Track your
+                progress in real-time and ensure you never overspend.
+            </p>
+            <p>
+                Our interactive tools help you visualize your expenses, identify areas for improvement, and plan for a
+                better financial future. With detailed insights and reports, you can confidently make informed decisions
+                about your money.
+            </p>
+        </div>
+    </section>
+
+    <!-- Savings Goals Section -->
+    <section class="info-section">
+        <div>
+            <h2>Achieve Your Savings Goals</h2>
+            <p>
+                Reaching your financial dreams starts with clear savings goals. Set specific milestones, whether it's
+                saving for a vacation, an emergency fund, or long-term investments.
+            </p>
+            <p>
+                Track your progress and get personalized suggestions to accelerate your savings. Celebrate your
+                achievements as you move closer to financial freedom.
+            </p>
+        </div>
+        <img src="Photos/Saving_Goals.png" alt="Savings Goals Illustration">
+    </section>
+
+    <!-- Reminders & Alerts Section -->
+    <section class="info-section">
+        <img src="Photos/Reminder.png" alt="Reminders Illustration">
+        <div>
+            <h2>Stay On Track with Reminders</h2>
+            <p>
+                Never miss a bill payment or important financial deadline again. With timely reminders and alerts, you
+                can stay organized and avoid unnecessary fees or penalties.
+            </p>
+            <p>
+                Our notification system keeps you updated on your transactions, helping you stay in control of your
+                financial journey.
+            </p>
+        </div>
+    </section>
+
+    <!-- Secure Data Section -->
+    <section class="info-section">
+        <div>
+            <h2>Protect Your Financial Data</h2>
+            <p>
+                Your privacy and security are our top priorities. All your financial information is encrypted and stored
+                securely, giving you peace of mind.
+            </p>
+            <p>
+                With regular security updates and advanced encryption techniques, we ensure your data remains safe and
+                accessible only to you.
+            </p>
+        </div>
+        <img src="Photos/Secure.png" alt="Secure Data Illustration">
+    </section>
+
+    <footer>
+        <p><b>Created by Janvi and Kavya</b></p>
+    </footer>
+</body>
+
+</html>

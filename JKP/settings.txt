@@ -1,0 +1,69 @@
+// users data query
+
+CREATE DATABASE user_auth;
+
+USE user_auth;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+// transtion data query
+
+CREATE DATABASE finance_tracker;
+
+USE finance_tracker;
+
+CREATE TABLE transactions (
+    id INT PRIMARY KEY AUTO_INCREMENT,       -- Auto-incrementing primary key
+    serial_number INT UNIQUE NOT NULL,       -- Unique but NOT auto-incremented
+    type ENUM('income', 'expense') NOT NULL, -- Transaction type
+    category VARCHAR(50) NOT NULL,           -- Transaction category
+    amount DECIMAL(10,2) NOT NULL,           -- Transaction amount
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- Date and time of transaction
+);
+
+// buget TABLE
+
+CREATE TABLE budget (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    month INT NOT NULL,
+    year INT NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    UNIQUE KEY unique_budget (month, year)
+);
+
+// buget Table (Optional if first not work)
+
+CREATE TABLE IF NOT EXISTS `budget` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `month` INT NOT NULL,
+    `year` INT NOT NULL,
+    `amount` DECIMAL(10,2) NOT NULL,
+    UNIQUE (`month`, `year`)  -- Ensures unique budget entry per month/year
+);
+
+
+CREATE TABLE savings_goals (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,  -- Assuming goals are user-specific
+    amount DECIMAL(10,2) NOT NULL,  -- Target savings amount
+    months INT NOT NULL,  -- Duration to achieve the goal
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY (user_id)  -- Ensures one goal per user
+);
+
+
+
+
+
+
+
+

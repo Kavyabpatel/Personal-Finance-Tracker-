@@ -1,0 +1,388 @@
+<!--DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker - Features</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+            background-size: cover;c
+            color: #fff; /* Light text color for better contrast */
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .features-section {
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: #00ced1; /* Teal for headings */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            font-size: 1.3rem;
+            color: #ddd; /* Light gray for paragraph text */
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .feature-cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+            border-radius: 8px;
+            padding: 30px;
+            flex: 1 1 30%;
+            margin: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            border: 3px solid #00ced1; /* Teal border for icons */
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background for icons */
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            color: #00ced1; /* Teal for headings */
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 1.1rem;
+            color: #ddd; /* Light gray for paragraph text */
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            margin-top: 40px;
+            display: inline-block;
+            background-color: #00ced1; /* Teal for button */
+            color: #000; /* Dark text for button */
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #009688; /* Darker teal on hover */
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .feature-cards {
+                flex-direction: column;
+            }
+
+            .feature-card {
+                flex: 1 1 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Personal Finance Tracker</h1>
+    </header>
+
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Discover Our Features</h2>
+            <p class="section-description">
+                Maximize your financial potential with our innovative tools and advanced features designed to make managing
+                your finances a breeze.
+            </p>
+
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <img src="Photos/Dashboard.png" alt="Dashboard Icon">
+                    <h3>Dashboard</h3>
+                    <p>Get a comprehensive overview of your financial activity with a user-friendly dashboard.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="Photos/DataTable.png" alt="Data Tables Icon">
+                    <h3>Data Tables</h3>
+                    <p>Organize and manage your financial data efficiently with sortable and filterable tables.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="Photos/Email.png" alt="Email Notifications Icon">
+                    <h3>Email Notifications</h3>
+                    <p>Stay informed with timely email alerts about bills, spending limits, and more.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="Photos/Support.png" alt="Customer Support Icon">
+                    <h3>Customer Support</h3>
+                    <p>Access 24/7 support for any queries or assistance with your financial tracking.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="Photos/Tools.png" alt="Budgeting Tools Icon">
+                    <h3>Budgeting Tools</h3>
+                    <p>Create and customize budgets to align with your financial goals seamlessly.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="Photos/Tracking.png" alt="Tracking Icon">
+                    <h3>Tracking</h3>
+                    <p>Track every transaction in detail, ensuring accurate financial records.</p>
+                </div>
+            </div>
+
+            <a href="signup.html" class="cta-button">Explore Features</a>
+        </div>
+    </section>
+
+    <footer>
+        <p><b>Created by Janvi and Kavya</b></p>
+    </footer>
+</body>
+
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker - Features</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff; /* Light text color for better contrast */
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .features-section {
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: #00ced1; /* Teal for headings */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            font-size: 1.3rem;
+            color: #ddd; /* Light gray for paragraph text */
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .feature-cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+            border-radius: 8px;
+            padding: 30px;
+            flex: 1 1 30%;
+            margin: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            border: 3px solid #00ced1; /* Teal border for icons */
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background for icons */
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            color: #00ced1; /* Teal for headings */
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 1.1rem;
+            color: #ddd; /* Light gray for paragraph text */
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            margin-top: 40px;
+            display: inline-block;
+            background-color: #00ced1; /* Teal for button */
+            color: #000; /* Dark text for button */
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #009688; /* Darker teal on hover */
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .feature-cards {
+                flex-direction: column;
+            }
+
+            .feature-card {
+                flex: 1 1 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Personal Finance Tracker</h1>
+    </header>
+
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Discover Our Features</h2>
+            <p class="section-description">
+                Maximize your financial potential with our innovative tools and advanced features designed to make managing
+                your finances a breeze.
+            </p>
+
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <img src="Photos/Dashboard.png" alt="Dashboard Icon">
+                    <h3>Dashboard</h3>
+                    <p>Get a comprehensive overview of your financial activity with a user-friendly dashboard.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="Photos/DataTable.png" alt="Data Tables Icon">
+                    <h3>Data Tables</h3>
+                    <p>Organize and manage your financial data efficiently with sortable and filterable tables.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="Photos/Email.png" alt="Email Notifications Icon">
+                    <h3>Email Notifications</h3>
+                    <p>Stay informed with timely email alerts about bills, spending limits, and more.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="Photos/Support.png" alt="Customer Support Icon">
+                    <h3>Customer Support</h3>
+                    <p>Access 24/7 support for any queries or assistance with your financial tracking.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="Photos/Tools.png" alt="Budgeting Tools Icon">
+                    <h3>Budgeting Tools</h3>
+                    <p>Create and customize budgets to align with your financial goals seamlessly.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="Photos/Tracking.png" alt="Tracking Icon">
+                    <h3>Tracking</h3>
+                    <p>Track every transaction in detail, ensuring accurate financial records.</p>
+                </div>
+            </div>
+
+            <a href="signup.html" class="cta-button">Explore Features</a>
+        </div>
+    </section>
+
+    <footer>
+        <p><b>Created by Janvi and Kavya</b></p>
+    </footer>
+</body>
+
+</html>
